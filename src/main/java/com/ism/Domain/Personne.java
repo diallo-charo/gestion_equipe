@@ -16,6 +16,7 @@ import lombok.ToString;
 public abstract class Personne {
     protected String nomComplet;
     protected LocalDate dateNaissance;
+    protected TypePersonne typePersonne;
     protected  Equipe equipe;
 
 
