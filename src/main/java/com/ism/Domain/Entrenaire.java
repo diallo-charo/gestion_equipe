@@ -1,16 +1,20 @@
 package com.ism.Domain;
 
-import lombok.AllArgsConstructor;
+import java.time.LocalDate;
+
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
 @Getter 
 @Setter 
-@NoArgsConstructor 
 @ToString 
-@AllArgsConstructor 
 public class Entrenaire extends Personne{
     private StrategieEnum strategie;
+
+    public Entrenaire(String nomComplet, LocalDate dateNaissance, TypePersonne typePersonne, Equipe equipe,
+            StrategieEnum strategie) {
+        super(nomComplet, dateNaissance, TypePersonne.ENTRAINEUR, equipe);
+        this.strategie = strategie;
+    }
 }
