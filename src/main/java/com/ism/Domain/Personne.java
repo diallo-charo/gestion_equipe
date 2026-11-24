@@ -11,13 +11,20 @@ import lombok.ToString;
 @ToString 
 @NoArgsConstructor 
 @Getter 
-@Setter 
-@AllArgsConstructor 
+@Setter
+@AllArgsConstructor  
 public abstract class Personne {
     protected String nomComplet;
     protected LocalDate dateNaissance;
     protected TypePersonne typePersonne;
     protected  Equipe equipe;
+
+
+    public Personne(String nomComplet, LocalDate dateNaissance, TypePersonne typePersonne) {
+        this.nomComplet = nomComplet;
+        this.dateNaissance = dateNaissance;
+        this.typePersonne = typePersonne;
+    }
 
 
     protected int age(){
