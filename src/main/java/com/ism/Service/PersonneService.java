@@ -51,14 +51,14 @@ public class PersonneService implements PersonneServiceImpl {
                 var strategie = entrenaire.getStrategie();
                 ListPersonneDto dto = new ListPersonneDto(nomComplet, dateNaissance, typePersonne, equipe, 0, null, strategie);
                 personnesDto.add(dto);
-                continue;
-            }
-
-            Joueur joueur = (Joueur) personne;
-            var numero = joueur.getNumero();
-            var poste = joueur.getPoste();
-            ListPersonneDto dto = new ListPersonneDto(nomComplet, dateNaissance, typePersonne, equipe, numero, poste, null);
-            personnesDto.add(dto);
+              
+            }else{
+                Joueur joueur = (Joueur) personne;
+                var numero = joueur.getNumero();
+                var poste = joueur.getPoste();
+                ListPersonneDto dto = new ListPersonneDto(nomComplet, dateNaissance, typePersonne, equipe, numero, poste, null);
+                personnesDto.add(dto);
+            }        
         }
         return personnesDto;
     }
