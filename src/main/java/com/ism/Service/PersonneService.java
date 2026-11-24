@@ -22,17 +22,16 @@ public class PersonneService implements PersonneServiceImpl {
     public boolean addPersonne(CreatePersonneDto personne) {
         var nomComplet = personne.getNomComplet();
         var dateNaissance = personne.getDateNaissance();
-        var equipe = personne.getEquipe();
 
         if(personne.getTypePersonne() == TypePersonne.ENTRAINEUR){
             var strategie = personne.getStrategie();
-            Entrenaire entrenaire = new Entrenaire(nomComplet, dateNaissance, equipe, strategie);
+            Entrenaire entrenaire = new Entrenaire(nomComplet, dateNaissance,strategie);
             return this.repo.insert(entrenaire);
         }
 
         var numero = personne.getNumero();
         var poste = personne.getPoste();
-        Joueur joueur = new Joueur(nomComplet, dateNaissance, equipe, numero, poste);
+        Joueur joueur = new Joueur(nomComplet, dateNaissance, numero, poste);
         return this.repo.insert(joueur);
     }
 
